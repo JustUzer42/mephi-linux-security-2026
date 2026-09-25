@@ -1,0 +1,30 @@
+    1  useradd -u 1234 -g students -m user1
+    2  id user1
+    3  passwd user1
+    4  chage -M 90 user1
+    5  chage -l user1
+    6  mkdir ~/mephi-linux-security-2026
+    7  ls -la ~/mephi-linux-security-2026
+    8  cp /etc/passwd /root/mephi-linux-security-2026/
+    9  cp /etc/shadow /root/mephi-linux-security-2026/
+   10  cp /etc/group /root/mephi-linux-security-2026/
+   11  find / -type f -perm -4000 2>/dev/null
+   12  find / -type f -perm -4000 2>/dev/null> /root/mephi-linux-security-2026/process_monitoring.out
+   13  ps -eo ruid,euid,pid,comm | awk '$1 >= 1000 && $2 ==0'
+   14  find / -type f -perm -4000 2>/dev/null> /root/mephi-linux-security-2026/process_monitoring.out
+   15  cat /root/mephi-linux-security-2026/process_monitoring.out
+   16  ps -eo ruid,euid,pid,comm | awk '$1 >= 1000 && $2 ==0' > /root/mephi-linux-security-2026/uid_monitoring.out
+   17  cp /usr/bin/cat /home/alina/cat
+   18  chown root:root /home/alina/cat
+   19  chmod u+s /home/alina/cat
+   20  exit
+   21  cp /bin/chown /home/alina/my_chown
+   22  setcap cap_chown=ep home/alina/my_chown
+   23  setcap cap_chown=ep /home/alina/my_chown
+   24  getcap /home/alina/my_chown
+   25  exit
+   26  visudo
+   27  exit
+   28  visudo
+   29  su - user1
+   30  history > /root/mephi-linux-security-2026/history.out
